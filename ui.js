@@ -3,6 +3,7 @@ class UI {
     this.profile = document.getElementById('profile');
   }
 
+  // Display profile UI
   showProfile(user) {
     this.profile.innerHTML = `
       <div class="card card-body mb-3">
@@ -31,6 +32,23 @@ class UI {
     `;
   }
 
+  // Show alert message
+  showAlert(msg, className ){
+    // Create div
+    const div = document.createElement("div");
+    // Add class
+    div.className = className;
+    // Add text
+    div.appendChild(document.createTextNode(msg));
+    // Get parent
+    const container = document.querySelector(".searchContainer");
+    // Get search box
+    const search = document.querySelector(".search");
+    // Insert alert
+    container.insertBefore(div, search);
+  }
+
+  // Clears profile
   clearProfile() {
     this.profile.innerHTML = "";
   }
