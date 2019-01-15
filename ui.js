@@ -57,6 +57,8 @@ class UI {
     if (currentAlert){
       currentAlert.remove();
     }
+    // Clear after 3 seconds
+    setTimeout(() => this.clearAlert(), 3000);
   }
 
   // Clears profile
